@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+.vscode/
+
+# Student data must never be uploaded
+data/raw/*
+data/processed/*
+reports/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!reports/.gitkeep

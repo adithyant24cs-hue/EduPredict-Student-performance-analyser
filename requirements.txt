@@ -1,0 +1,15 @@
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+scikit-learn
+joblib
+streamlit
+pymupdf
+pdfplumber
+reportlab
+pytesseract
+pillow
+kaleido
+pytest
