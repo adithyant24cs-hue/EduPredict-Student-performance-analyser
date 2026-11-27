@@ -1,0 +1,337 @@
+{
+  "model_name": "Logistic Regression",
+  "feature_set": "sem1",
+  "target": "Dropout_flag (1 = Dropout, 0 = Graduate or Enrolled)",
+  "features": [
+    "Marital status",
+    "Application mode",
+    "Application order",
+    "Course",
+    "Daytime/evening attendance",
+    "Previous qualification",
+    "Previous qualification (grade)",
+    "Admission grade",
+    "Displaced",
+    "Debtor",
+    "Tuition fees up to date",
+    "Gender",
+    "Scholarship holder",
+    "Age at enrollment",
+    "Curricular units 1st sem (credited)",
+    "Curricular units 1st sem (enrolled)",
+    "Curricular units 1st sem (evaluations)",
+    "Curricular units 1st sem (approved)",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 1st sem (without evaluations)"
+  ],
+  "categorical": [
+    "Marital status",
+    "Application mode",
+    "Application order",
+    "Course",
+    "Previous qualification"
+  ],
+  "binary": [
+    "Daytime/evening attendance",
+    "Displaced",
+    "Debtor",
+    "Tuition fees up to date",
+    "Gender",
+    "Scholarship holder"
+  ],
+  "numeric": [
+    "Previous qualification (grade)",
+    "Admission grade",
+    "Age at enrollment",
+    "Curricular units 1st sem (credited)",
+    "Curricular units 1st sem (enrolled)",
+    "Curricular units 1st sem (evaluations)",
+    "Curricular units 1st sem (approved)",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 1st sem (without evaluations)"
+  ],
+  "alert_threshold": 0.4,
+  "allowed_values": {
+    "Marital status": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "Application mode": [
+      1,
+      2,
+      5,
+      7,
+      10,
+      15,
+      16,
+      17,
+      18,
+      26,
+      27,
+      39,
+      42,
+      43,
+      44,
+      51,
+      53,
+      57
+    ],
+    "Application order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+    ],
+    "Course": [
+      33,
+      171,
+      8014,
+      9003,
+      9070,
+      9085,
+      9119,
+      9130,
+      9147,
+      9238,
+      9254,
+      9500,
+      9556,
+      9670,
+      9773,
+      9853,
+      9991
+    ],
+    "Daytime/evening attendance": [
+      0,
+      1
+    ],
+    "Previous qualification": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9,
+      10,
+      12,
+      15,
+      19,
+      38,
+      39,
+      40,
+      42,
+      43
+    ],
+    "Displaced": [
+      0,
+      1
+    ],
+    "Debtor": [
+      0,
+      1
+    ],
+    "Tuition fees up to date": [
+      0,
+      1
+    ],
+    "Gender": [
+      0,
+      1
+    ],
+    "Scholarship holder": [
+      0,
+      1
+    ]
+  },
+  "numeric_ranges": {
+    "Previous qualification (grade)": [
+      95.0,
+      190.0
+    ],
+    "Admission grade": [
+      95.0,
+      190.0
+    ],
+    "Age at enrollment": [
+      17.0,
+      62.0
+    ],
+    "Curricular units 1st sem (credited)": [
+      0.0,
+      20.0
+    ],
+    "Curricular units 1st sem (enrolled)": [
+      0.0,
+      26.0
+    ],
+    "Curricular units 1st sem (evaluations)": [
+      0.0,
+      45.0
+    ],
+    "Curricular units 1st sem (approved)": [
+      0.0,
+      26.0
+    ],
+    "Curricular units 1st sem (grade)": [
+      0.0,
+      18.0
+    ],
+    "Curricular units 1st sem (without evaluations)": [
+      0.0,
+      12.0
+    ]
+  },
+  "training": {
+    "n_train": 3539,
+    "n_test": 885,
+    "dropout_rate_train": 0.3213,
+    "random_state": 42
+  },
+  "test_metrics": {
+    "threshold_0.50": {
+      "recall": 0.81,
+      "precision": 0.762
+    },
+    "threshold_0.40": {
+      "recall": 0.852,
+      "precision": 0.68
+    },
+    "roc_auc": 0.912
+  },
+  "model_comparison": [
+    {
+      "feature_set": "enrollment",
+      "model": "Logistic Regression",
+      "accuracy": 0.754,
+      "precision": 0.594,
+      "recall": 0.736,
+      "f1": 0.657,
+      "roc_auc": 0.836
+    },
+    {
+      "feature_set": "enrollment",
+      "model": "Random Forest",
+      "accuracy": 0.772,
+      "precision": 0.652,
+      "recall": 0.62,
+      "f1": 0.635,
+      "roc_auc": 0.831
+    },
+    {
+      "feature_set": "enrollment",
+      "model": "Gradient Boosting",
+      "accuracy": 0.751,
+      "precision": 0.605,
+      "recall": 0.648,
+      "f1": 0.626,
+      "roc_auc": 0.813
+    },
+    {
+      "feature_set": "sem1",
+      "model": "Logistic Regression",
+      "accuracy": 0.858,
+      "precision": 0.762,
+      "recall": 0.81,
+      "f1": 0.785,
+      "roc_auc": 0.912
+    },
+    {
+      "feature_set": "sem1",
+      "model": "Random Forest",
+      "accuracy": 0.852,
+      "precision": 0.793,
+      "recall": 0.729,
+      "f1": 0.76,
+      "roc_auc": 0.909
+    },
+    {
+      "feature_set": "sem1",
+      "model": "Gradient Boosting",
+      "accuracy": 0.86,
+      "precision": 0.768,
+      "recall": 0.806,
+      "f1": 0.787,
+      "roc_auc": 0.909
+    },
+    {
+      "feature_set": "full",
+      "model": "Logistic Regression",
+      "accuracy": 0.881,
+      "precision": 0.805,
+      "recall": 0.831,
+      "f1": 0.818,
+      "roc_auc": 0.933
+    },
+    {
+      "feature_set": "full",
+      "model": "Random Forest",
+      "accuracy": 0.882,
+      "precision": 0.844,
+      "recall": 0.778,
+      "f1": 0.81,
+      "roc_auc": 0.93
+    },
+    {
+      "feature_set": "full",
+      "model": "Gradient Boosting",
+      "accuracy": 0.876,
+      "precision": 0.815,
+      "recall": 0.792,
+      "f1": 0.804,
+      "roc_auc": 0.931
+    }
+  ],
+  "random_forest_top_features": {
+    "Curricular units 1st sem (approved)": 0.208,
+    "Curricular units 1st sem (grade)": 0.149,
+    "Tuition fees up to date": 0.081,
+    "Course": 0.077,
+    "Age at enrollment": 0.069,
+    "Curricular units 1st sem (evaluations)": 0.061,
+    "Admission grade": 0.061,
+    "Application mode": 0.051,
+    "Previous qualification (grade)": 0.05,
+    "Curricular units 1st sem (enrolled)": 0.031
+  },
+  "versions": {
+    "python": "3.14.6",
+    "scikit_learn": "1.9.1",
+    "pandas": "3.1.1",
+    "numpy": "2.5.5",
+    "joblib": "1.6.0"
+  },
+  "smoke_test": {
+    "row": {
+      "Marital status": 1,
+      "Application mode": 1,
+      "Application order": 2,
+      "Course": 9670,
+      "Daytime/evening attendance": 1,
+      "Previous qualification": 1,
+      "Previous qualification (grade)": 131.0,
+      "Admission grade": 135.9,
+      "Displaced": 1,
+      "Debtor": 0,
+      "Tuition fees up to date": 1,
+      "Gender": 0,
+      "Scholarship holder": 1,
+      "Age at enrollment": 18,
+      "Curricular units 1st sem (credited)": 0,
+      "Curricular units 1st sem (enrolled)": 6,
+      "Curricular units 1st sem (evaluations)": 6,
+      "Curricular units 1st sem (approved)": 6,
+      "Curricular units 1st sem (grade)": 13.166666666666666,
+      "Curricular units 1st sem (without evaluations)": 0
+    },
+    "expected_probability": 0.06192641648334391
+  }
+}
