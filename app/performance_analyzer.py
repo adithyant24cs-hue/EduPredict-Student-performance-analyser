@@ -102,6 +102,17 @@ def _semester_sort_key(label):
     return (1, 0, str(label))
 
 
+def _semester_label(value):
+    """3.0 -> 'Semester 3' (the PDF extractor stores semesters as numbers); text is kept as is."""
+    try:
+        number = float(value)
+        if number == int(number):
+            return f"Semester {int(number)}"
+    except (TypeError, ValueError):
+        pass
+    return str(value)
+
+
 def _band(p, pass_pct, weak_pct, good_pct):
     if p < pass_pct:
         return "Fail"
@@ -416,7 +427,7 @@ def semester_trend_chart(result: dict):
         return None
     fig = go.Figure(
         go.Scatter(
-            x=summary["Semester"].astype(str),
+            x=summary["Semester"].map(_semester_label),
             y=summary["Average_Percentage"],
             mode="lines+markers+text",
             text=summary["Average_Percentage"].round(1).astype(str) + "%",
