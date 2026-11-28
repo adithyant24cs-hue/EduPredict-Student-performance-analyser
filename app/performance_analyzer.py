@@ -294,7 +294,7 @@ def analyze_performance(
             f"({gpa_info['ratio_percent']}% of the scale)."
         )
     if attendance_info:
-        state = "below" if attendance_info["below_required"] else "meets"
+        state = "is below" if attendance_info["below_required"] else "meets"
         insights.append(
             f"Attendance is {attendance_info['value']:g}%, which {state} the required "
             f"{attendance_info['required']:g}%."
